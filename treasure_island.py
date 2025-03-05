@@ -27,8 +27,8 @@ print("Your mission is to find the treasure.\n")
 print("You have heard about this treasure, hidden in a mysterious pine forest from an old story, told to you by your grandpa...\n")
 print("You have decided to go through the tall pine forest.")
 print("After a hour of walking, the forest parts its way in two ways... one to the left, the other to the right.\n")
-direction = input('Which way will you choose? Type "Right" or "Left"? \n')
-if direction == "left" or direction == "Left":
+direction = input('Which way will you choose? Type "left" or "right"? \n').lower()
+if direction == "left":
     print("You kept walking, until you found a mysterious lake.")
     print("In the middle of the river, you can see a small island.")
     print(r'''
@@ -60,8 +60,8 @@ if direction == "left" or direction == "Left":
     ''')
     print("You have two options:\n 1) Swim to the island.\n 2) Waist time to craft yourself a small boat so that you can travel safely to the island.\n")
     print("What will be your method of transportation?")
-    transportation = input('Type "boat" if you want to build a boat or type "swim" if you are willing to take a risk so that you will be the first to the treasure! ')
-    if transportation == "boat" or transportation == "Boat":
+    transportation = input('Type "boat" if you want to build a boat or type "swim" if you are willing to take a risk so that you will be the first to the treasure! ').lower()
+    if transportation == "boat":
         print(r'''
      _
     /|\
@@ -70,8 +70,6 @@ if direction == "left" or direction == "Left":
  \_o_o_o_/
 ~~ |     ~~~~~
 ___t_________ 
-
-unknown
         ''')
         print("You have arrived on the island, tired from all the rowing.")
         print("You decide to take a quick nap. That nap turned into a long night of sleep.")
@@ -85,13 +83,16 @@ unknown
                   \_\/'/ __/ )  /  )   |      \--,
                   | \`""`__-/ .'--/   /--------\  \
                    \\`  ///-\/   /   /---;-.    '-'
-             jgs                (________\  \
+                                (________\  \
                                           '-'
         ''')
         print("You decide to waste no time anymore. After walking for a bit you see a big mansion.")
-        print("You don't know which is the entrance, since the mansion has 3 entrances. A red door, a blue door and a yellow door.")
-        door = input('Which door will you choose to enter into? Type "red" for the red door, "blue" for the blue door, or "yellow" for the yellow one. Choose wisely! ')
-        if door == "yellow" or door == "Yellow":
+        print("You don't know which is the correct entrance, since the mansion has 3 entrances. "
+              "A red door, a blue door and a yellow door.")
+        door = input('Which door will you choose to enter into? '
+                     'Type "red" for the red door, "blue" for the blue door, or "yellow" for the yellow one. '
+                     'Choose wisely! ').lower()
+        if door == "yellow":
             print(r'''
 *******************************************************************************
           |                   |                  |                     |
@@ -115,7 +116,7 @@ ____/______/______/______/______/_____"=.o|o_.--""___/______/______/______/____
 *******************************************************************************
             ''')
             print("Congratulations, you have found the treasure. Your grandpa will be proud of you!")
-        elif door == "red" or door == "Red":
+        elif door == "red":
             print(r'''  
                (  .      )
            )           (              )
@@ -127,7 +128,7 @@ ____/______/______/______/______/_____"=.o|o_.--""___/______/______/______/____
  jgs^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
             ''')
             print("Oh no! You entered the wrong door. The room that you are in is on fire.\n Your progress ends here...")
-        elif door == "blue" or door == "Blue":
+        elif door == "blue":
             print(r'''
                    (    )
                   ((((()))
@@ -178,7 +179,8 @@ ____/______/______/______/______/_____"=.o|o_.--""___/______/______/______/____
      jgs     \ \, ~   -   ~
               \_|
         ''')
-        print("You didn't even get into the river properly before you were pulled down by an octopus and bitten by piranhas. Better luck next time!")
+        print("You didn't even get into the river properly before you were pulled down by an octopus and bitten by piranhas. "
+              "Better luck next time!")
 else:
     print(r'''
     #======================
@@ -194,4 +196,5 @@ else:
       #=====================#
     ''')
     print("You fell into a trap, a hole covered with leafs.")
-    print("Your journey to finding the treasure ends here. Good luck next time traveler!")
+    print("Your journey to finding the treasure ends here. \n\n"
+          "Good luck next time traveler!")
